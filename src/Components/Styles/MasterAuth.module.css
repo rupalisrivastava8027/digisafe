@@ -1,0 +1,24 @@
+.master_auth_field
+{
+    /* background-color: #001f3f; */
+    text-align: center;
+    margin-top: 10%; 
+    /* TODO: work on centering this */
+
+}
+
+
+@keyframes logoAnimation {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+img
+{
+    height: 75px;
+    margin-bottom: 50px;
+    animation-name: logoAnimation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+

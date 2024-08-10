@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import Header from "./Components/Header";
+import MasterAuth from "./Components/MasterAuth";
+import Greeting from "./Components/Greeting";
+import Nav from "./Components/Nav";
+import ChatType from "./Components/ChatType";
+import Chat from "./Components/Chat";
+import Credentials from "./Components/Credentials";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    const [passedMaster, setPassedMaster] = useState(false);
+
+    if (passedMaster == true)
+    {
+        return (
+            <div>
+                <Header/>
+                <MasterAuth entrance={setPassedMaster} />
+            </div>
+        );
+    }
+
+    else
+    {
+        return (
+            <div>
+                {/* <Header/>
+                <Greeting/>
+                <div className="chatArea">
+                    <Chat/>
+                    <ChatType/>
+                </div> */}
+
+                <Header/>
+                <div className="searchContainer">
+                    <ChatType placeholder="Search Credentials"/>
+                    <Credentials />
+                </div>
+                
+              
+                    
+                
+            </div>
+        );
+    }
 }
-
-export default App;
