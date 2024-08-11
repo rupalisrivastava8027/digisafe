@@ -1,3 +1,5 @@
+/* ------------------------------------------General Styles------------------------------------------ */
+
 * {
     padding: 0;
     margin: 0;
@@ -15,27 +17,7 @@ input
     color: #001f3f;
 }
 
-
-.nav
-{
-    /* background-color: blue; */
-    font-size: 25px;
-    /* position: absolute;
-    top: 40%; */
-    width: max-content;
-    padding: 10% 45px;
-}
-
-.nav p 
-{
-    margin-top: 25px;
-}
-
-.nav p:hover
-{
-    color: #1e036a;
-    cursor: pointer;
-}
+/* --------------------------------------------Chat Page-------------------------------------------- */
 
 .chatArea
 {
@@ -44,10 +26,12 @@ input
 }
 
 
-/* DATA STORAGE PAGE STYLES */
+/* ----------------------------------DATA STORAGE PAGE STYLES ------------------------------------*/
 
 .searchContainer
 {
     text-align: center;
     padding-top: 11%;
+    margin: 0 10vw;
+    
 }

@@ -1,0 +1,29 @@
+.navBox
+{
+    display: flex;
+    justify-content: center;
+}
+
+.nav
+{
+    font-size: 25px;
+
+    width: max-content;
+    /* padding: 10% 45px; */
+    position: absolute;
+    bottom: 30px;
+}
+
+.nav p 
+{
+    display: inline;
+    margin: 25px;
+    transition: all .4s ease;
+}
+
+.nav p:hover
+{
+    font-size: 27px;
+    cursor: pointer;
+    
+}

@@ -10,8 +10,10 @@ import "./App.css";
 
 export default function App() {
     const [passedMaster, setPassedMaster] = useState(false);
+    const [navChat, setNavChat] = useState(true);
+    const [navDataStorage, setNavDataStorage] = useState(false); 
 
-    if (passedMaster == true)
+    if (passedMaster == false)
     {
         return (
             <div>
@@ -23,25 +25,35 @@ export default function App() {
 
     else
     {
-        return (
-            <div>
-                {/* <Header/>
-                <Greeting/>
-                <div className="chatArea">
-                    <Chat/>
-                    <ChatType/>
-                </div> */}
-
-                <Header/>
-                <div className="searchContainer">
-                    <ChatType placeholder="Search Credentials"/>
-                    <Credentials />
+        if (navChat)
+        {
+            return (
+                
+                <div>
+                    <Header/>
+                    <Greeting/>
+                    <div className="chatArea">
+                        <Chat/>
+                        <ChatType placeholder="Search, Ask, or Create Credentials"/>
+                    </div>
+                    <Nav chatPage={setNavChat} dataStoragePage={setNavDataStorage}/>
                 </div>
-                
-              
-                    
-                
-            </div>
-        );
+            );
+        }
+
+        if (navDataStorage)
+        {
+            return (
+                <div>
+                    <Header/>
+                    <div className="searchContainer">
+                        <ChatType placeholder="Search Credentials"/>
+                        <Credentials />
+                    </div>
+
+                    <Nav chatPage={setNavChat} dataStoragePage={setNavDataStorage}/>
+                </div>
+            );
+        }
     }
 }

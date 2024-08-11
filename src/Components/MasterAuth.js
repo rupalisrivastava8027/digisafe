@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Styles/MasterAuth.module.css"
-import logo from "../Logos/DigiSafe_Logo.jpg";
+import logo from "../Logos/DigiSafe_Logo.png";
 
 export default function MasterAuth(props) {
     function handleClickForMaster()
