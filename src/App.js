@@ -3,9 +3,10 @@ import Header from "./Components/Header";
 import MasterAuth from "./Components/MasterAuth";
 import Greeting from "./Components/Greeting";
 import Nav from "./Components/Nav";
-import ChatType from "./Components/ChatType";
+import Search from "./Components/CredentialSearch";
 import Chat from "./Components/Chat";
 import Credentials from "./Components/Credentials";
+import ChatSearch from "./Components/ChatSearch"
 import "./App.css";
 
 export default function App() {
@@ -34,7 +35,7 @@ export default function App() {
                     <Greeting/>
                     <div className="chatArea">
                         <Chat/>
-                        <ChatType placeholder="Search, Ask, or Create Credentials"/>
+                        <ChatSearch placeholder="Search, Ask, or Create Credentials"/>
                     </div>
                     <Nav chatPage={setNavChat} dataStoragePage={setNavDataStorage}/>
                 </div>
@@ -47,9 +48,9 @@ export default function App() {
                 <div>
                     <Header/>
                     <div className="searchContainer">
-                        <ChatType placeholder="Search Credentials"/>
+                        <Search placeholder="Search Credentials" />
                         <Credentials />
-                    </div>
+                    </div>  
 
                     <Nav chatPage={setNavChat} dataStoragePage={setNavDataStorage}/>
                 </div>

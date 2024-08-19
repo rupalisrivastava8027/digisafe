@@ -9,18 +9,21 @@
 
 input
 {
-    font-size: 25px;
+    font-size: 23px;
     border-width: 3.5px;
-    border-radius: 8px;
+    border-radius: 5px;
     border-color: black;
-    padding: 1.2% 2%;
+    padding: 15px; 
+    /* width: 270px; */
     color: #001f3f;
+    text-align: left;
 }
 
 /* --------------------------------------------Chat Page-------------------------------------------- */
 
 .chatArea
 {
+    padding-top: 300px;
     text-align: center;
     /* background-color: #1e036a;    */
 }

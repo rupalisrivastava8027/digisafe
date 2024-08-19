@@ -6,7 +6,7 @@
 
 .nav
 {
-    font-size: 25px;
+    font-size: 22px;
 
     width: max-content;
     /* padding: 10% 45px; */
@@ -23,7 +23,7 @@
 
 .nav p:hover
 {
-    font-size: 27px;
+    font-size: 23px;
     cursor: pointer;
     
 }

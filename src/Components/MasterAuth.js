@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./Styles/MasterAuth.module.css"
 import logo from "../Logos/DigiSafe_Logo.png";
+import submit from "../Logos/submit.png";
 
 export default function MasterAuth(props) {
-    function handleClickForMaster()
+    function handleClickForSubmit()
     {
         const correctMaster = "hello";
         const inputField = document.getElementById("input");
@@ -26,11 +27,12 @@ export default function MasterAuth(props) {
     return (
         <div className={styles.master_auth_field}>
             <div> 
-                <img src={logo} alt="Logo" id="logo"/> 
+                <img src={logo} alt="Logo" id="logo"/>      
             </div>
 
             <input id="input" type="password" placeholder="Enter Master Password"/>
-            <input onClick={handleClickForMaster} type="submit" value=">" />
+            <input type="submit" onClick={handleClickForSubmit}/>
+
         </div>
     );
 }
