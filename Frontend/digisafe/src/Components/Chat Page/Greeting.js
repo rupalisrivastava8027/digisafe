@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Styles/Greeting.module.css"
+import styles from "../Styles/Greeting.module.css"
 
 export default function Greeting()
 {

@@ -1,12 +1,12 @@
 import React, {useState} from "react";
-import Header from "./Components/Header";
-import MasterAuth from "./Components/MasterAuth";
-import Greeting from "./Components/Greeting";
-import Nav from "./Components/Nav";
-import Search from "./Components/CredentialSearch";
-import Chat from "./Components/Chat";
-import Credentials from "./Components/Credentials";
-import ChatSearch from "./Components/ChatSearch"
+import Header from "./Components/General/Header";
+import MasterAuth from "./Components/Master Auth/MasterAuth";
+import Greeting from "./Components/Chat Page/Greeting";
+import Nav from "./Components/General/Nav";
+import Search from "./Components/Data Storage Page/CredentialSearch";
+import Chat from "./Components/Chat Page/Chat";
+import Credentials from "./Components/Data Storage Page/Credentials";
+import ChatSearch from "./Components/Chat Page/ChatSearch"
 import "./App.css";
 
 export default function App() {
@@ -14,7 +14,7 @@ export default function App() {
     const [navChat, setNavChat] = useState(true);
     const [navDataStorage, setNavDataStorage] = useState(false); 
 
-    if (passedMaster == false)
+    if (passedMaster == true)
     {
         return (
             <div>

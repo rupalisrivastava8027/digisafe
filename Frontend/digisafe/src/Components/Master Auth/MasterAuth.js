@@ -1,7 +1,6 @@
 import React from "react";
-import styles from "./Styles/MasterAuth.module.css"
-import logo from "../Logos/DigiSafe_Logo.png";
-import submit from "../Logos/submit.png";
+import styles from "../Styles/MasterAuth.module.css"
+import logo from "../../images/DigiSafe_Logo2.jpg";
 
 export default function MasterAuth(props) {
     function handleClickForSubmit()

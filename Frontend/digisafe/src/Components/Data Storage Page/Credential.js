@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Styles/Credential.module.css";
+import styles from "../Styles/Credential.module.css";
 
 export default function Credential(props) {
 

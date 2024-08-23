@@ -3,7 +3,7 @@ import React from "react";
 export default function Search(props) {
     const searchStyle =  {
         fontSize: "97%",
-        width: "70%"
+        width: "70%",
     };
 
     return (

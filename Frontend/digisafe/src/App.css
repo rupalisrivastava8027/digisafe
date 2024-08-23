@@ -23,9 +23,13 @@ input
 
 .chatArea
 {
-    padding-top: 300px;
-    text-align: center;
-    /* background-color: #1e036a;    */
+    margin-top: 25%;
+    /* padding-top: 300px;  */
+    /* text-align: center; */
+    background-color: #1e036a;   
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 

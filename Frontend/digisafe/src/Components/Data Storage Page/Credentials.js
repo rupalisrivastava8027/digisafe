@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Credential from "./Credential";
-import styles from "./Styles/Credentials.module.css";
+import styles from "../Styles/Credentials.module.css";
 
 
 export default function Credentials() {
