@@ -1,0 +1,23 @@
+.chatbar {
+    /* background-color: rgb(104, 17, 17); */
+    display: block;
+    width: 60%;
+    text-align: center;
+}
+
+.typingbox {
+    font-size: 94%;
+    width: 90%;
+}
+
+.send {
+
+    font-size: 94%;
+    border-width: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.send:hover {
+   color: blue;
+}

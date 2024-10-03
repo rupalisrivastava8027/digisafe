@@ -1,12 +1,13 @@
 import React from "react";
+import styles from "../Styles/Message.module.css";
 
 export default function Message(props) {
 
-    const botstyle = {textAlign: "left"}
-    const userstyle = {textAlign: "right"}
     return (
-        <div style={props.type == "user" ? userstyle : botstyle}>
-            <p> {props.text} </p>
+        <div className={props.type == "user" ? styles.user : styles.bot}>
+            <div className={props.type == "user" ? styles.userMessage : styles.botMessage}>
+                <p> {props.text} </p>
+            </div>
         </div>
     );
 }

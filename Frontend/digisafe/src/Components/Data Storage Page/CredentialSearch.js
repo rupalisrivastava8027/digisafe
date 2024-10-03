@@ -1,7 +1,6 @@
 import React from "react";
-import handleChange from "./Credentials";
 
-export default function Search(props) {
+export default function Search() {
     const searchStyle =  {
         fontSize: "97%",
         width: "70%"
@@ -10,6 +9,6 @@ export default function Search(props) {
     
 
     return (
-        <input style={searchStyle} id="search" onChange={handleChange} type="search" placeholder={props.placeholder}/>
+        <input style={searchStyle} id="search" type="search" placeholder="Search Credentials"/>
     );
 }

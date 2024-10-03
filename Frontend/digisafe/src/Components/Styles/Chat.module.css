@@ -1,0 +1,7 @@
+.chat {
+    width: 60%;
+    background-color: green;
+    max-height: 475px;
+    overflow:auto;
+    margin-bottom: 20px;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../Styles/MasterAuth.module.css"
-import logo from "../../images/DigiSafe_Logo2.jpg";
+import logo from "../../images/DigiSafe_Logo.png";
 
 export default function MasterAuth(props) {
     function handleClickForSubmit()
@@ -30,7 +30,7 @@ export default function MasterAuth(props) {
             </div>
 
             <input id="input" type="password" placeholder="Enter Master Password"/>
-            <input type="submit" onClick={handleClickForSubmit}/>
+            <input style={{borderWidth: "2", backgroundColor: "transparent", cursor: "pointer"}} type="submit" value="&#11166;" onClick={handleClickForSubmit}/>
 
         </div>
     );

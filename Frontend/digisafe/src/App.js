@@ -6,14 +6,18 @@ import Nav from "./Components/General/Nav";
 import Search from "./Components/Data Storage Page/CredentialSearch";
 import Chat from "./Components/Chat Page/Chat";
 import Credentials from "./Components/Data Storage Page/Credentials";
-import ChatSearch from "./Components/Chat Page/ChatSearch"
+import ChatBar from "./Components/Chat Page/ChatBar"
 import "./App.css";
+import IndivCred from "./Components/Data Storage Page/Indiv. Credentials Page/IndivCred";
+import * as IndivCredParams from "./Components/Data Storage Page/Indiv. Credentials Page/IndivCredParams";
 
 export default function App() {
-    const [passedMaster, setPassedMaster] = useState(false);
-    const [navChat, setNavChat] = useState(true);
-    const [navDataStorage, setNavDataStorage] = useState(false); 
 
+    const [passedMaster, setPassedMaster] = useState(false);
+    
+    const [navChat, setNavChat] = useState(false);    
+    const [navDataStorage, setNavDataStorage] = useState(true);
+    
     if (passedMaster == true)
     {
         return (
@@ -35,7 +39,7 @@ export default function App() {
                     <Greeting/>
                     <div className="chatArea">
                         <Chat/>
-                        <ChatSearch placeholder="Search, Ask, or Create Credentials"/>
+                        <ChatBar placeholder="Search, Ask, or Create Credentials"/>
                     </div>
                     <Nav chatPage={setNavChat} dataStoragePage={setNavDataStorage}/>
                 </div>
@@ -48,7 +52,7 @@ export default function App() {
                 <div>
                     <Header/>
                     <div className="searchContainer">
-                        <Search placeholder="Search Credentials" />
+                        <Search />
                         <Credentials />
                     </div>  
 
@@ -56,5 +60,15 @@ export default function App() {
                 </div>
             );
         }
+
+        if (IndivCredParams.state) {
+            return (
+                <>
+                    <Header/>
+
+                    <IndivCred name={IndivCredParams.name}/>
+                </>
+            );
+        }
     }
-}
+}   

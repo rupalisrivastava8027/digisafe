@@ -1,0 +1,36 @@
+
+.user {
+    font-size: 15px;
+    text-align: right;
+    /* background-color: blue; */
+    margin: 20px 0px;
+}
+
+.userMessage {
+    display: inline-block;
+    
+    padding: 12px;
+    margin: 0px 25px;
+    
+    max-width: 40%;
+
+    background-color: rgb(209, 105, 19);
+    border-radius: 5px;
+}
+
+.bot {
+    font-size: 15px;
+    text-align: left;
+    /* background-color: rgb(255, 68, 0); */
+    margin: 20px 0px;
+}
+
+.botMessage {
+    display: inline-block;
+    padding: 12px;
+    margin: 0px 25px;
+    max-width: 40%;
+
+    background-color: grey;
+    border-radius: 5px;
+}
