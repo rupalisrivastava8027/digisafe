@@ -9,13 +9,13 @@ app.use(cors())
 const PORT = 3002;
 
 const CREDENTIALS = {
-    google: {
+    Google: {
         name: "Google",
         username: "someone@gmail.com",
         password: "1234"
     },
 
-    microsft: {
+    Microsoft: {
         name: "Microsoft",
         username: "someone@outlook.com",
         password: "3893"

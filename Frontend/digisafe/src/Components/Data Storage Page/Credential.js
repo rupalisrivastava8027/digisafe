@@ -1,20 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "../Styles/Credential.module.css";
-
-import * as IndivCredParams from "./Indiv. Credentials Page/IndivCredParams"
+import IndivPage from "./Indiv. Credentials Page/IndivPage";
+import { navContext } from "../../Contexts/navContext";
+import { safeContext } from "../../Contexts/Safe";
 
 export default function Credential(props) {
 
+    const {setNavDataStorage, setIndiv, setNavChat} = useContext(navContext);
+    const {LOCALVAULT} = useContext(safeContext);
+
     function handleClick() {
+        // identify which credential was clicked
+        const clickedCredential = LOCALVAULT[props.name]
 
-        console.log("CLicked")
-        // state = true when clicked and other nav states false
-        IndivCredParams.setState(true)
+        // set all NavStates to false
+        setNavChat(false);
+        setNavDataStorage(false)
+       
 
-        // pass in parameters
-        IndivCredParams.setName(props.name)
-        IndivCredParams.setUsername("username!")
-        IndivCredParams.setPassword("123")
+        // set Parameters of IndivPage to LocalVault[credential]'s
+        const renderIndivPage = (
+            <IndivPage name={clickedCredential.name}/>
+        );
+
+        setIndiv(renderIndivPage)
+
+        
+
+        
     }
     return (
         <button style={styles.button} onClick={handleClick}>{props.name}</button>

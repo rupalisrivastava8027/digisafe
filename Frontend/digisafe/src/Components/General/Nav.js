@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "../Styles/Nav.module.css"
+import { navContext } from "../../Contexts/navContext"
 
-export default function Nav(props) {
+export default function Nav() {
+
+    const {navChat, setNavChat, navDataStorage, setNavDataStorage} = useContext(navContext);
 
     function handleClickChat() {
-        props.chatPage(true);
-        props.dataStoragePage(false);
+       setNavChat(true);
+       setNavDataStorage(false);
     }
 
     function handleClickDataStorage() {
-        props.chatPage(false);
-        props.dataStoragePage(true);
+        setNavChat(false);
+        setNavDataStorage(true);
     }
+
 
     return (
         <div className={styles.navBox}>

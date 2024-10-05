@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {createContext, useState} from "react";
 import Header from "./Components/General/Header";
 import MasterAuth from "./Components/Master Auth/MasterAuth";
 import Greeting from "./Components/Chat Page/Greeting";
@@ -8,23 +8,76 @@ import Chat from "./Components/Chat Page/Chat";
 import Credentials from "./Components/Data Storage Page/Credentials";
 import ChatBar from "./Components/Chat Page/ChatBar"
 import "./App.css";
-import IndivCred from "./Components/Data Storage Page/Indiv. Credentials Page/IndivCred";
-import * as IndivCredParams from "./Components/Data Storage Page/Indiv. Credentials Page/IndivCredParams";
+
+import { navContext } from "./Contexts/navContext";
+import { safeContext } from "./Contexts/Safe";
+
 
 export default function App() {
 
-    const [passedMaster, setPassedMaster] = useState(false);
+    const [passedMaster, setPassedMaster] = useState(true);
     
-    const [navChat, setNavChat] = useState(false);    
+    const [navChat, setNavChat] = useState(false);
     const [navDataStorage, setNavDataStorage] = useState(true);
-    
-    if (passedMaster == true)
+    const [indiv, setIndiv] = useState("");
+
+    const [LOCALVAULT, setLOCALVAULT] = useState("No data from backend yet!");
+
+    console.log({ passedMaster, navChat, navDataStorage, indiv });
+
+    return (                                             // BRO?? Why is this so complicated?
+        passedMaster == false ? 
+              (  <>
+                    <Header/>
+                    <MasterAuth entrance={setPassedMaster}/>
+                </> ) : 
+                    // executes if passed
+                    navChat ? (
+                    
+                    <safeContext.Provider value={{LOCALVAULT, setLOCALVAULT}}>
+                        <navContext.Provider value={{setNavChat, setIndiv, setNavDataStorage}}>
+                            <div>
+                                <Header/>
+                                <Greeting/>
+                                <div className="chatArea">
+                                    <Chat/>
+                                    <ChatBar placeholder="Search, Ask, or Create Credentials"/>
+                                </div>
+                                    <Nav/>
+                            </div>
+                        </navContext.Provider>
+                    </safeContext.Provider>
+                    ) : navDataStorage ? (
+                    
+                    <safeContext.Provider value={{LOCALVAULT, setLOCALVAULT}}>
+                        <navContext.Provider value={{setNavChat, setNavDataStorage, setIndiv}}>
+                            <div>
+                        
+                                <Header/>
+                                <div className="searchContainer">
+                                    <Search />
+                                    <Credentials />
+                                </div>
+                                <Nav chatPage={setNavChat} dataStoragePage={setNavDataStorage}/>
+                            </div>
+                        </navContext.Provider>
+                    </safeContext.Provider>
+                    ) : indiv != null ?
+                          indiv : null  
+                );
+
+}
+
+
+    {/* {/* if (passedMaster == true)
     {
         return (
-            <div>
-                <Header/>
-                <MasterAuth entrance={setPassedMaster} />
-            </div>
+            <navContext.Provider value={{navChat, setNavChat, navDataStorage, setNavDataStorage}}>
+                <div>
+                    <Header/>
+                    <MasterAuth entrance={setPassedMaster} />
+                </div>
+            </navContext.Provider>
         );
     }
 
@@ -33,42 +86,38 @@ export default function App() {
         if (navChat)
         {
             return (
-                
-                <div>
-                    <Header/>
-                    <Greeting/>
-                    <div className="chatArea">
-                        <Chat/>
-                        <ChatBar placeholder="Search, Ask, or Create Credentials"/>
+                <navContext.Provider value={{navChat, setNavChat, navDataStorage, setNavDataStorage}}>
+                    <div>
+                        <Header/>
+                        <Greeting/>
+                        <div className="chatArea">
+                            <Chat/>
+                            <ChatBar placeholder="Search, Ask, or Create Credentials"/>
+                        </div>
+                            <Nav/>
                     </div>
-                    <Nav chatPage={setNavChat} dataStoragePage={setNavDataStorage}/>
-                </div>
+                </navContext.Provider>
+
             );
         }
 
         if (navDataStorage)
         {
             return (
-                <div>
-                    <Header/>
-                    <div className="searchContainer">
-                        <Search />
-                        <Credentials />
-                    </div>  
+                <navContext.Provider value={{navChat, setNavChat, navDataStorage, setNavDataStorage}}>
+                    <div>
+                   
+                        <Header/>
+                        <div className="searchContainer">
+                            <Search />
+                            <Credentials />
+                        </div>  
 
-                    <Nav chatPage={setNavChat} dataStoragePage={setNavDataStorage}/>
-                </div>
+                        <Nav chatPage={setNavChat} dataStoragePage={setNavDataStorage}/>
+                    </div>
+                </navContext.Provider>
+
+            
             );
         }
-
-        if (IndivCredParams.state) {
-            return (
-                <>
-                    <Header/>
-
-                    <IndivCred name={IndivCredParams.name}/>
-                </>
-            );
-        }
-    }
-}   
+    }*/}
